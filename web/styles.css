@@ -87,3 +87,7 @@ input.invalid {
 input:focus.invalid {
   outline: solid 2px red
 }
+
+button:disabled {
+  opacity: 50%;
+}

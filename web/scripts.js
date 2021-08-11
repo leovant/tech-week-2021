@@ -19,8 +19,10 @@ buttonClear.addEventListener('click', clearForm)
 
 function toggleValid(element, valid) {
   if (valid) {
+    element.setCustomValidity('')
     element.classList.remove('invalid')
   } else {
+    element.setCustomValidity('Invalid value')
     element.classList.add('invalid')
   }
 }
@@ -67,6 +69,9 @@ function maskDate() {
   personBirth.value = maskedBirthDate.slice(0, 10)
 }
 
+/**
+ * Valida data
+ */
 function validatePersonBirth() {
   const birthDate = String(personBirth.value)
 
@@ -82,3 +87,13 @@ function validatePersonBirth() {
   }
   return toggleValid(personBirth, true)
 }
+
+/**
+ * Habilita botão Enviar
+ */
+const button = document.getElementById('form-submit')
+const form = document.getElementById('person-form')
+
+form.addEventListener('change', function() {
+  button.disabled = !form.checkValidity()
+})

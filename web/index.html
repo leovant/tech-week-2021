@@ -16,7 +16,7 @@
 <body>
   <main>
     <div class="form-container">
-      <form class="form" method="post">
+      <form class="form" method="post" id="person-form">
         <section class="form-input">
           <label for="person-name">Nome</label>
           <input type="text" aria-label="Nome" name="person-name" id="person-name" class="person-name" onkeyup="validatePersonName()"/>
@@ -31,7 +31,7 @@
         </section>
         <section class="form-actions">
           <button id="form-clear" class="btn">Limpar</button>
-          <button id="form-submit" class="btn submit">Enviar</button>
+          <button id="form-submit" class="btn submit" disabled>Enviar</button>
         </section>
       </form>
     </div>
