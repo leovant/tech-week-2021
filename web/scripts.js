@@ -34,3 +34,21 @@ function validatePersonName() {
   }
   return personName.classList.add('invalid')
 }
+
+/**
+ * Valida e-mail: formato texto@texto.com
+ */
+ function validatePersonEmail() {
+  const email = String(personEmail.value).trim()
+
+  if (!email) {
+    return personEmail.classList.add('invalid')
+  }
+
+  const valid = /^\S+@\S+\.\S+$/.test(email)
+
+  if (valid) {
+    return personEmail.classList.remove('invalid')
+  }
+  return personEmail.classList.add('invalid')
+}
