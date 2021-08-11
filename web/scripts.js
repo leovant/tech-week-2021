@@ -16,8 +16,10 @@ function clearForm(event) {
 
 function toggleValid(element, valid) {
   if (valid) {
+    element.setCustomValidity('')
     element.classList.remove('invalid')
   } else {
+    element.setCustomValidity('Invalid value')
     element.classList.add('invalid')
   }
 }
@@ -75,4 +77,15 @@ function validatePersonBirth() {
   }
   return toggleValid(personBirth, true)
 }
-// Habilitar botão
+
+// Habilitar botão Enviar
+const form = document.getElementById('person-form')
+const button = document.getElementById('form-submit')
+
+function toggleSubmitButton(enabled) {
+  button.disabled = !enabled
+}
+
+form.addEventListener('change', function() {
+  button.disabled = !form.checkValidity()
+})
