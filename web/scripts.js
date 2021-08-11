@@ -35,6 +35,24 @@ function validatePersonName(event) {
 }
 
 // Validar e-mail: texto@texto.texto
+function validatePersonEmail(event) {
+
+  const email = personEmail.value.trim()
+
+  if (!email) {
+    personEmail.classList.add('invalid')
+    return;
+  }
+
+  const valid = /\S+@\S+\.\S+$/.test(email)
+
+  if (valid) {
+    personEmail.classList.remove('invalid')
+    return;
+  }
+
+  return personEmail.classList.add('invalid')
+}
 
 // Mascarar data: dd/mm/yyyy
 

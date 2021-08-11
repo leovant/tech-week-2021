@@ -23,7 +23,7 @@
         </section>
         <section class="form-input">
           <label for="person-email">E-mail</label>
-          <input type="email" aria-label="E-mail" name="person-email" id="person-email" class="person-email" />
+          <input type="email" aria-label="E-mail" name="person-email" id="person-email" class="person-email" onkeypress="validatePersonEmail(event)" onblur="validatePersonEmail(event)"/>
         </section>
         <section class="form-input">
           <label for="person-birth">Nascimento</label>
