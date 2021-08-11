@@ -1,4 +1,5 @@
 const express = require('express')
+const fs = require('fs')
 const app = express()
 const port = 3000
 
@@ -19,8 +20,20 @@ app.get('/ping', (req, res) => {
  */
 app.post('/person', (req, res) => {
   const { name, email, birthDate } = req.body
+
+  console.log('New person received:')
+  console.table([ name, email, birthDate ])
+
+  try {
+    const file = fs.createWriteStream('people.txt', { flags: 'a' }) // a flat 'a' é para incluir dados, mantendo os anteriores
+    file.write(`${String(name).padEnd(100, ' ')}${String(email).padEnd(30, ' ')}${String(birthDate).padStart(15)}\n`)
+    file.end()
+  } catch (e) {
+    console.error(e.message)
+    return res.status(500).json({ message: e.message })
+  }
   
-  res.json({ name, email, birthDate })
+  res.status(201).json({ name, email, birthDate })
 })
 
 app.listen(port, () => {
