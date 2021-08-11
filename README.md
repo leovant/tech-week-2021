@@ -17,7 +17,9 @@ Abrir o arquivo `web/index.html` no navegador.
 
 ### API
 
-Executar o comando `npm start`.
+1. Acessar a pasta `/api`
+2. Executar o comando `npm install` para baixar as dependências.
+3. Executar o comando `npm start`.
 
 ## Referências
 
