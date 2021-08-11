@@ -79,3 +79,15 @@ main {
   color: #fff;
   font-weight: bold;
 }
+
+input.invalid {
+  border-color: red;
+}
+
+input:focus.invalid {
+  outline: solid 2px red;
+}
+
+button:disabled {
+  opacity: 50%;
+}
