@@ -15,7 +15,7 @@ function clearForm(event) {
 }
 
 // Validar nome: só pode ter letras e espaços
-function validatePersonName() {
+function validatePersonName(event) {
 
   const name = personName.value.trim()
 

@@ -83,3 +83,7 @@ main {
 input.invalid {
   border-color: red;
 }
+
+input:focus.invalid {
+  outline: solid 2px red;
+}
