@@ -17,6 +17,14 @@ function clearForm(event) {
 
 buttonClear.addEventListener('click', clearForm)
 
+function toggleValid(element, valid) {
+  if (valid) {
+    element.classList.remove('invalid')
+  } else {
+    element.classList.add('invalid')
+  }
+}
+
 /**
  * Valida o nome: deve aceitar apenas letras
  */
@@ -24,15 +32,12 @@ function validatePersonName() {
   const name = String(personName.value).trim()
 
   if (!name) {
-    return personName.classList.add('invalid')
+    return toggleValid(personName, false)
   }
 
   const valid = /^[a-zA-Z]+$/.test(name)
 
-  if (valid) {
-    return personName.classList.remove('invalid')
-  }
-  return personName.classList.add('invalid')
+  return toggleValid(personName, valid)
 }
 
 /**
@@ -42,15 +47,12 @@ function validatePersonName() {
   const email = String(personEmail.value).trim()
 
   if (!email) {
-    return personEmail.classList.add('invalid')
+    return toggleValid(personEmail, false)
   }
 
   const valid = /^\S+@\S+\.\S+$/.test(email)
 
-  if (valid) {
-    return personEmail.classList.remove('invalid')
-  }
-  return personEmail.classList.add('invalid')
+  return toggleValid(personEmail, valid)
 }
 
 /**
@@ -63,4 +65,20 @@ function maskDate() {
   maskedBirthDate = maskedBirthDate.replace(/(\d{2})(\d)/, '$1/$2') // Inclui a segunda barra
 
   personBirth.value = maskedBirthDate.slice(0, 10)
+}
+
+function validatePersonBirth() {
+  const birthDate = String(personBirth.value)
+
+  if (birthDate.length != 10) {
+    return toggleValid(personBirth, false)
+  }
+
+  const [day, month, year] = birthDate.split('/')
+  const date = new Date(`${year}-${month}-${day}`) // yyyy-mm-dd
+
+  if (date == 'Invalid Date') {
+    return toggleValid(personBirth, false)
+  }
+  return toggleValid(personBirth, true)
 }
