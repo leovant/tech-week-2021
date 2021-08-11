@@ -14,24 +14,26 @@ function clearForm(event) {
   personBirth.value = '';
 }
 
+function toggleValid(element, valid) {
+  if (valid) {
+    element.classList.remove('invalid')
+  } else {
+    element.classList.add('invalid')
+  }
+}
+
 // Validar nome: só pode ter letras e espaços
 function validatePersonName() {
 
   const name = personName.value.trim()
 
   if (!name) {
-    personName.classList.add('invalid')
-    return;
+    return toggleValid(personName, false)
   }
 
   const valid = /^[a-zA-Z ]*$/.test(name)
 
-  if (valid) {
-    personName.classList.remove('invalid')
-    return;
-  }
-
-  return personName.classList.add('invalid')
+  return toggleValid(personName, valid)
 }
 
 // Validar e-mail: texto@texto.texto
@@ -40,18 +42,12 @@ function validatePersonEmail() {
   const email = personEmail.value.trim()
 
   if (!email) {
-    personEmail.classList.add('invalid')
-    return;
+    return toggleValid(personEmail, false);
   }
 
   const valid = /\S+@\S+\.\S+$/.test(email)
 
-  if (valid) {
-    personEmail.classList.remove('invalid')
-    return;
-  }
-
-  return personEmail.classList.add('invalid')
+  return toggleValid(personEmail, valid)
 }
 
 // Mascarar data: dd/mm/yyyy
