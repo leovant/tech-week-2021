@@ -19,7 +19,7 @@
       <form class="form" method="post">
         <section class="form-input">
           <label for="person-name">Nome</label>
-          <input type="text" aria-label="Nome" name="person-name" id="person-name" class="person-name" />
+          <input type="text" aria-label="Nome" name="person-name" id="person-name" class="person-name" onkeyup="validatePersonName()"/>
         </section>
         <section class="form-input">
           <label for="person-email">E-mail</label>
@@ -30,13 +30,13 @@
           <input type="text" aria-label="Nascimento" name="person-birth" id="person-birth" class="person-birth" />
         </section>
         <section class="form-actions">
-          <button id="form-clean" class="btn">Limpar</button>
+          <button id="form-clear" class="btn">Limpar</button>
           <button id="form-submit" class="btn submit">Enviar</button>
         </section>
       </form>
     </div>
   </main>
-  <script src="" async defer></script>
+  <script src="scripts.js" async defer></script>
 </body>
 
 </html>
