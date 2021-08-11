@@ -60,5 +60,19 @@ function maskDate() {
 }
 
 // Validar data
+function validatePersonBirth() {
+  const birthDate = String(personBirth.value)
 
+  if (birthDate.length != 10) {
+    return toggleValid(personBirth, false)
+  }
+
+  const [day, month, year] = birthDate.split('/')
+  const date = new Date(`${year}-${month}-${day}`)
+
+  if (date == 'Invalid Date') {
+    return toggleValid(personBirth, false)
+  }
+  return toggleValid(personBirth, true)
+}
 // Habilitar botão

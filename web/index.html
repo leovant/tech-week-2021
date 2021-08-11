@@ -27,7 +27,7 @@
         </section>
         <section class="form-input">
           <label for="person-birth">Nascimento</label>
-          <input type="text" aria-label="Nascimento" name="person-birth" id="person-birth" class="person-birth" onkeyup="maskDate()"/>
+          <input type="text" aria-label="Nascimento" name="person-birth" id="person-birth" class="person-birth" onkeyup="maskDate(); validatePersonBirth()"/>
         </section>
         <section class="form-actions">
           <button id="form-clear" class="btn" onclick="clearForm(event)">Limpar</button>
