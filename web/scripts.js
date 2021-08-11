@@ -89,3 +89,33 @@ function toggleSubmitButton(enabled) {
 form.addEventListener('change', function() {
   button.disabled = !form.checkValidity()
 })
+
+// Envia dados do formulário para API
+function submitData(event) {
+  event.preventDefault()
+
+  const formData = new FormData(form)
+  const obj = Object.fromEntries(formData)
+  const parameters = {
+    method: 'POST',
+    body: `name=${obj.name}&email=${obj.email}&birthDate=${obj.birthDate}`,
+    headers: {
+      'Content-type': 'application/x-www-form-urlencoded'
+    }
+  }
+  console.log(formData, parameters)
+
+  fetch('http://localhost:3000/person', parameters)
+  .then(function(response) {
+    if (response.ok) {
+      return response.json()
+    }
+    return Promise.reject(response)
+  })
+  .then(function(data) {
+    console.log(`Response received: ${JSON.stringify(data)}`)
+  })
+  .catch(function(error) {
+    console.error(error)
+  })
+}

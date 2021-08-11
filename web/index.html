@@ -16,7 +16,7 @@
 <body>
   <main>
     <div class="form-container">
-      <form id="person-form" class="form" method="post" action="http://localhost:3000/person">
+      <form id="person-form" class="form">
         <section class="form-input">
           <label for="person-name">Nome</label>
           <input type="text" required aria-label="Nome" name="name" id="person-name" class="person-name" onkeyup="validatePersonName()" onblur="validatePersonName()" />
@@ -31,7 +31,7 @@
         </section>
         <section class="form-actions">
           <button id="form-clear" class="btn" onclick="clearForm(event)">Limpar</button>
-          <button id="form-submit" class="btn submit" disabled>Enviar</button>
+          <button id="form-submit" class="btn submit" disabled onclick="submitData(event)">Enviar</button>
         </section>
       </form>
     </div>
