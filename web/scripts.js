@@ -52,3 +52,15 @@ function validatePersonName() {
   }
   return personEmail.classList.add('invalid')
 }
+
+/**
+ * Mascara a data
+ */
+function maskDate() {
+  const birthDate = personBirth.value
+  let maskedBirthDate = birthDate.replace(/\D/g, '') // Remove o que não é número
+  maskedBirthDate = maskedBirthDate.replace(/(\d{2})(\d)/, '$1/$2') // Inclui a primeira barra
+  maskedBirthDate = maskedBirthDate.replace(/(\d{2})(\d)/, '$1/$2') // Inclui a segunda barra
+
+  personBirth.value = maskedBirthDate.slice(0, 10)
+}
