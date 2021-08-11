@@ -1,0 +1,22 @@
+{
+  "name": "tech-week-2021",
+  "version": "1.0.0",
+  "description": "Api utilizando Node e Express",
+  "main": "api.js",
+  "scripts": {
+    "start": "node api.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leovant/tech-week-2021.git"
+  },
+  "author": "Leovan Tavares da Silva (@leovant)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leovant/tech-week-2021/issues"
+  },
+  "homepage": "https://github.com/leovant/tech-week-2021#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
