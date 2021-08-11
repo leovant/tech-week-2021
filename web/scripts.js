@@ -19,10 +19,16 @@ function validatePersonName() {
   const name = personName.value.trim()
 
   if (!name) {
-    alert('Nome inválido')
+    return alert('Nome inválido')
   }
 
-  alert('Nome válido')
+  const valid = /^[a-zA-Z ]*$/.test(name)
+
+  if (valid) {
+    return alert('Nome válido')
+  }
+
+  return alert('Nome inválido')
 }
 
 // Validar e-mail: texto@texto.texto
