@@ -19,15 +19,15 @@
       <form class="form" method="post">
         <section class="form-input">
           <label for="person-name">Nome</label>
-          <input type="text" aria-label="Nome" name="person-name" id="person-name" class="person-name" onkeypress="validatePersonName(event)" onblur="validatePersonName(event)" />
+          <input type="text" aria-label="Nome" name="person-name" id="person-name" class="person-name" onkeypress="validatePersonName()" onblur="validatePersonName()" />
         </section>
         <section class="form-input">
           <label for="person-email">E-mail</label>
-          <input type="email" aria-label="E-mail" name="person-email" id="person-email" class="person-email" onkeypress="validatePersonEmail(event)" onblur="validatePersonEmail(event)"/>
+          <input type="email" aria-label="E-mail" name="person-email" id="person-email" class="person-email" onkeypress="validatePersonEmail()" onblur="validatePersonEmail()"/>
         </section>
         <section class="form-input">
           <label for="person-birth">Nascimento</label>
-          <input type="text" aria-label="Nascimento" name="person-birth" id="person-birth" class="person-birth" />
+          <input type="text" aria-label="Nascimento" name="person-birth" id="person-birth" class="person-birth" onkeyup="maskDate()"/>
         </section>
         <section class="form-actions">
           <button id="form-clear" class="btn" onclick="clearForm(event)">Limpar</button>

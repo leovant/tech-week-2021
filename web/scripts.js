@@ -15,7 +15,7 @@ function clearForm(event) {
 }
 
 // Validar nome: só pode ter letras e espaços
-function validatePersonName(event) {
+function validatePersonName() {
 
   const name = personName.value.trim()
 
@@ -35,7 +35,7 @@ function validatePersonName(event) {
 }
 
 // Validar e-mail: texto@texto.texto
-function validatePersonEmail(event) {
+function validatePersonEmail() {
 
   const email = personEmail.value.trim()
 
@@ -55,6 +55,13 @@ function validatePersonEmail(event) {
 }
 
 // Mascarar data: dd/mm/yyyy
+function maskDate() {
+  const birthDate = personBirth.value
+  let maskedBirthDate = birthDate.replace(/\D/g, "") // Remove o que não for número
+  maskedBirthDate = maskedBirthDate.replace(/(\d{2})(\d)/, "$1/$2") // Inclui a primeira barra
+  maskedBirthDate = maskedBirthDate.replace(/(\d{2})(\d)/, "$1/$2") // Inclui a segunda barra
+  personBirth.value = maskedBirthDate.slice(0, 10) // Remove caracteres extras no final
+}
 
 // Validar data
 
