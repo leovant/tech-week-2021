@@ -14,21 +14,24 @@ function clearForm(event) {
   personBirth.value = '';
 }
 
-// Validar nome: só pode ter letras
+// Validar nome: só pode ter letras e espaços
 function validatePersonName() {
+
   const name = personName.value.trim()
 
   if (!name) {
-    return alert('Nome inválido')
+    personName.classList.add('invalid')
+    return;
   }
 
   const valid = /^[a-zA-Z ]*$/.test(name)
 
   if (valid) {
-    return alert('Nome válido')
+    personName.classList.remove('invalid')
+    return;
   }
 
-  return alert('Nome inválido')
+  return personName.classList.add('invalid')
 }
 
 // Validar e-mail: texto@texto.texto
