@@ -16,22 +16,22 @@
 <body>
   <main>
     <div class="form-container">
-      <form class="form" method="post" id="person-form">
+      <form class="form" method="post" id="person-form" action="http://localhost:3000/person">
         <section class="form-input">
           <label for="person-name">Nome</label>
-          <input type="text" aria-label="Nome" name="person-name" id="person-name" class="person-name" onkeyup="validatePersonName()"/>
+          <input type="text" aria-label="Nome" name="name" id="person-name" class="person-name" onkeyup="validatePersonName()"/>
         </section>
         <section class="form-input">
           <label for="person-email">E-mail</label>
-          <input type="email" aria-label="E-mail" name="person-email" id="person-email" class="person-email" onkeyup="validatePersonEmail()"/>
+          <input type="email" aria-label="E-mail" name="email" id="person-email" class="person-email" onkeyup="validatePersonEmail()"/>
         </section>
         <section class="form-input">
           <label for="person-birth">Nascimento</label>
-          <input type="text" aria-label="Nascimento" name="person-birth" id="person-birth" class="person-birth" onkeyup="maskDate(); validatePersonBirth()"/>
+          <input type="text" aria-label="Nascimento" name="birthDate" id="person-birth" class="person-birth" onkeyup="maskDate(); validatePersonBirth()"/>
         </section>
         <section class="form-actions">
           <button id="form-clear" class="btn">Limpar</button>
-          <button id="form-submit" class="btn submit" disabled>Enviar</button>
+          <button id="form-submit" class="btn submit" type="submit" disabled>Enviar</button>
         </section>
       </form>
     </div>
