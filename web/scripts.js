@@ -7,14 +7,23 @@ const personBirth = document.getElementById('person-birth')
 const buttonClear = document.getElementById('form-clear')
 
 function clearForm(event) {
-    event.preventDefault()
+  event.preventDefault()
 
-    personName.value = '';
-    personEmail.value = '';
-    personBirth.value = '';
+  personName.value = '';
+  personEmail.value = '';
+  personBirth.value = '';
 }
 
 // Validar nome: só pode ter letras
+function validatePersonName() {
+  const name = personName.value.trim()
+
+  if (!name) {
+    alert('Nome inválido')
+  }
+
+  alert('Nome válido')
+}
 
 // Validar e-mail: texto@texto.texto
 
