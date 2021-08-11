@@ -19,7 +19,7 @@
       <form class="form" method="post">
         <section class="form-input">
           <label for="person-name">Nome</label>
-          <input type="text" aria-label="Nome" name="person-name" id="person-name" class="person-name" onkeypress="validatePersonName(event)"/>
+          <input type="text" aria-label="Nome" name="person-name" id="person-name" class="person-name" onkeypress="validatePersonName(event)" onblur="validatePersonName(event)" />
         </section>
         <section class="form-input">
           <label for="person-email">E-mail</label>
