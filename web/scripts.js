@@ -97,3 +97,35 @@ const form = document.getElementById('person-form')
 form.addEventListener('change', function() {
   button.disabled = !form.checkValidity()
 })
+
+/**
+ * Envia dados para a API
+ */
+function submitData(event) {
+  event.preventDefault()
+
+  const formData = new FormData(form)
+  const { name, email, birthDate } = Object.fromEntries(formData)
+  const parameters = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: `name=${name}&email=${email}&birthDate=${birthDate}`
+  }
+
+  fetch('http://localhost:3000/person', parameters)
+  .then(function(response) {
+    if (response.ok) {
+      return response.json()
+    }
+    return Promise.reject(response)
+  })
+  .then(function(data) {
+    console.log('Response received', data)
+  })
+  .catch(function(error) {
+    console.error(error)
+    alert('Dados não enviados!')
+  })
+}

@@ -1,9 +1,11 @@
 const fs = require('fs')
 const express = require('express')
+const cors = require('cors')
 const app = express()
 const port = 3000
 
 app.use(express.urlencoded({ extended: true }))
+app.use(cors())
 
 app.get('/ping', (req, res) => {
   res.send('Pong')
