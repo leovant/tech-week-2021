@@ -18,7 +18,7 @@ app.post('/person', function(request, response) {
   console.table([ name, email, birthDate ])
 
   try {
-    const file = fs.createWriteStream('people.txt', { flag: 'a' }) // a flag 'a' é para incluir dados, mantendo os anteriores
+    const file = fs.createWriteStream('people.txt', { flags: 'a' }) // a flag 'a' é para incluir dados, mantendo os anteriores
     const line = `${String(name).padEnd(100, ' ')}${String(email).padEnd(30, ' ')}${String(birthDate).padStart(15, ' ')}\n`
 
     file.write(line)

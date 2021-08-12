@@ -37,7 +37,7 @@ function validatePersonName() {
     return toggleValid(personName, false)
   }
 
-  const valid = /^[a-zA-Z]+$/.test(name)
+  const valid = /^[a-zA-Z ]+$/.test(name)
 
   return toggleValid(personName, valid)
 }
